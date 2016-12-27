@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 
+import Tag from '../Tag/Tag';
 // An array of existing tags. Just uncomment when you want to use them.
-// import tagsJSON from '../../api/tags.json';
-
+import tagsJSON from '../../api/tags.json';
 import './TagEditor.css';
 
 class TagEditor extends Component {
 
+  deleteTag() {
+
+  }
+
   render() {
+    const tags = tagsJSON.tags.map(tag => (
+      <Tag label={tag.label} color={tag.color} deleteTag={this.deleteTag}/>
+    ));
     return (
       <div className="tag-editor">
         <h5 className="tag-editor-title">TAGS</h5>
-        <span
-          style={{color: '#d5dadf', fontSize: '12px', paddingTop: '15px'}}
-          /* you can remove this span */
-        >
-          /*
-            The rest of the code shoud be placed here and is up to you.
-            This is a starting point to let your ideas run free.
-          */
-        </span>
+        {tags}
       </div>
     );
   }
