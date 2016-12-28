@@ -19,7 +19,7 @@ export const displayTagAction = tag => ({
   payload: tag
 });
 
-export const removeTagAction = label => ({
+export const hideTagAction = label => ({
   type: REMOVE_TAGLIST,
   payload: label
 });

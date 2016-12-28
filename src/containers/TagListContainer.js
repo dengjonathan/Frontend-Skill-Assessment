@@ -4,11 +4,11 @@ import TagList from '../components/TagList/TagList';
 import {hideTagAction} from '../actions/tagListActions';
 
 const mapStateToProps = state => ({
-  tags: state.tagList
+  tags: state.tagList.filter(tag => tag.displayed)
 });
 
 const mapDispatchToProps = dispatch => ({
-  hideTag: label => dispatch(hideTagAction(label))
+  hide: label => dispatch(hideTagAction(label))
 });
 
 export default connect(

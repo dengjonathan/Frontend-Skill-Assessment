@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default ({label, color, hideTag}) => (
+export default ({label, color, hide}) => (
   <div className='tag' style={{backgroundColor: color}}>
     <span>{label}</span>
-    <button onClick={hideTag}>X</button>
+    <button onClick={hide}>X</button>
   </div>
 );
