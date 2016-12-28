@@ -1,2 +1,6 @@
-export const ADD_TO_LIST = 'ADD_TO_LIST';
+// UPDATE TAG LIST
+export const ADD_TAGLIST = 'ADD_TO_LIST';
+export const REMOVE_TAGLIST = 'REMOVE_TAGLIST';
+
+// UPDATE AVAILABLE TAGS
 export const CREATE_TAG = 'CREATE_TAG';
