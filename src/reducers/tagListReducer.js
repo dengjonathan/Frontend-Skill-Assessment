@@ -1,26 +1,49 @@
-import {ADD_TAGLIST, REMOVE_TAGLIST} from '../actions/actionTypes';
+import {
+  CREATE_TAG,
+  DESTROY_TAG,
+  ADD_TAGLIST,
+  REMOVE_TAGLIST } from '../actions/actionTypes';
 
-export const INITIAL_STATE = [];
+const INITIAL_STATE = [];
+
+const findTag = (state, label) => state.map(tag => tag.label).indexOf(label);
 
 export default (state=INITIAL_STATE, action) => {
   if (!action) {
     return state;
   }
+  let index;
   switch(action.type) {
-    case ADD_TAGLIST:
-      // if tag not created, don't display tag
-      // if (action.getState().availTagsState
-      //   .map(tag => tag.label)
-      //   .indexOf(action.payload.label) < 0) {
-      //     return state;
+    case CREATE_TAG:
       return [
-        ...state,
+        ...state, 
         action.payload
-       ];
-    case REMOVE_TAGLIST:
-      const index = state.map(tag => tag.label).indexOf(action.payload);
+      ];
+
+    case DESTROY_TAG:
+      index = findTag(state, action.payload);
       return index > -1
         ? [...state.slice(0, index), ...state.slice(index + 1)]
+        : state;
+
+    case ADD_TAGLIST:
+      index = findTag(state, action.payload);
+      return index > -1
+        ? [
+            ...state.slice(0 , index),
+            {...state[index], displayed: true},
+            ...state.slice(index + 1)
+          ]
+        : state;
+
+    case REMOVE_TAGLIST:
+      index = findTag(state, action.payload);
+      return index > -1
+        ? [
+            ...state.slice(0 , index),
+            {...state[index], displayed: false},
+            ...state.slice(index + 1)
+          ]
         : state;
     default:
       return state;
