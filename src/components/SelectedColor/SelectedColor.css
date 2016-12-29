@@ -2,6 +2,7 @@
   display: inline-block;
   color: #fff;
   margin-left: 0.5vw;
+  vertical-align: top;
 }
 
 .colorButton {
