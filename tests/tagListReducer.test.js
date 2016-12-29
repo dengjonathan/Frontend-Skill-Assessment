@@ -5,7 +5,7 @@ import {
   createTagAction,
   destroyTagAction,
   displayTagAction, 
-  removeTagAction} from '../src/actions/tagListActions';
+  hideTagAction} from '../src/actions/tagListActions';
 
 describe('list of selected tags', () => {
   const Tags = [
@@ -60,7 +60,7 @@ describe('list of selected tags', () => {
 
     expect(displayedState.filter(tag => tag.displayed).length).to.equal(1);
 
-    const removedState = tagListState(displayedState, removeTagAction('VanillaJS'));
+    const removedState = tagListState(displayedState, hideTagAction('VanillaJS'));
 
     expect(removedState.filter(tag => tag.displayed).length).to.equal(0);
   });
