@@ -4,7 +4,7 @@ import TagChoice from '../TagChoice/TagChoice';
 
 export default ({tags, destroy, display}) => (
   <div>
-    Tag Choice
+
     {tags.map(tag => (<TagChoice
         key={tag.label}
         label={tag.label}
