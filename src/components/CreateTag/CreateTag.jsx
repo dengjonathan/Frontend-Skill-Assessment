@@ -5,6 +5,7 @@ import ColorPickerContainer from '../../containers/ColorPickerContainer';
 import SelectedColor from '../SelectedColor/SelectedColor';
 import {dispatch} from '../../store/store';
 import {createTagAction} from '../../actions/tagListActions';
+import './CreateTag.css';
 
 class CreateTag extends Component {
   constructor() {
@@ -39,10 +40,10 @@ class CreateTag extends Component {
   render() {
     return (
       <div className='createTag'>
-        <input value={this.state.value} onChange={this.onChangeValue}/>
-        <ColorPickerContainer selected={this.state.color} onChangeColor={this.onChangeColor}/>
+        <input value={this.state.value} placeholder='Type to add a tag.' onChange={this.onChangeValue}/>
         <SelectedColor color={this.state.color}/>
         <Button label='Add Tag' onClick={this.onSubmit} />
+        <ColorPickerContainer selected={this.state.color} onChangeColor={this.onChangeColor}/>
      </div>
     );
   }
