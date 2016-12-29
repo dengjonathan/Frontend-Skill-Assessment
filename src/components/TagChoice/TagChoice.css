@@ -1,0 +1,12 @@
+.colorSample {
+  display: inline-block;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 3px;
+}
+
+.tagChoice .label {
+  padding-left: 0.5vw;
+  vertical-align: top;
+}
+

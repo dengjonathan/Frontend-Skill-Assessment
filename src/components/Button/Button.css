@@ -1,5 +1,6 @@
 .button {
   display: inline-block;
+  vertical-align: top;
   width: 8vw;
   height: 2.7vw;
   border: none;
@@ -7,4 +8,5 @@
   color: #fff;
   background-color: #212121;
   font-size: 2vh;
+  margin-left: 0.5vw;
 }
