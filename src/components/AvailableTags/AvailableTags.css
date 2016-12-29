@@ -1,0 +1,18 @@
+.availableTags {
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.availableTags .tagChoice {
+  border-top: 1pt solid #ccc;
+}
+
+.availableTags input {
+  border: none;
+}
+
+.tagChoice {
+  padding: 0.8vh 0.5vh;
+}
