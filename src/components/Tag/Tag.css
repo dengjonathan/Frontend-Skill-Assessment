@@ -1,0 +1,25 @@
+.tag,
+.tag span,
+.tag .hide {
+  display: inline-block;
+  color: #fff;
+}
+
+.tag {
+  margin: 0.5vh;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+.tag span {
+  padding: 0.8vh;
+  padding-right: 1vw;
+}
+
+.tag .hide {
+  background-color: transparent;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  font-size: 1.4vh;
+  padding: 1.4vh;
+}
